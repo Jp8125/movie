@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <video [src]="mobj.Details.VideoLink" controls class="w-100 h-100"></video>
+        </div>
+        <div class="col-sm-4 bg-primary text-white">
+           <h4 class="text-center">Actors:</h4> 
+            <div *ngFor="let name of mobj.Details.ActorsNames">
+                <p class="my-1 text-center">{{name}}</p>
+            </div>
+        </div>
+    </div>
+</div>

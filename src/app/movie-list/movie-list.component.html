@@ -1,0 +1,24 @@
+<div class="container">
+    <p class="bg-primary text-white text-center p-4">Director name:{{dname}}</p>
+    <div class="row">
+        <div class="col-sm-2">
+            <div *ngFor="let item of filterlist">
+                <h5 [routerLink]="['movie',item.MovieID]" class="bg-primary p-3 text-white" (click)="name(item.Details.DirectorName)">{{item.MovieName}}</h5>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="d-flex mt-2 justify-content-between">
+        <select name="movies" id="mv" [(ngModel)]="actor" (change)="filter(actor)">
+            <option *ngFor="let item1 of fil1.Actors" >{{item1}}</option>
+        </select>
+        <select name="director" id="dir" [(ngModel)]="movie" (change)="filter2(movie)">
+            <option  *ngFor="let item2 of fil1.Movies">{{item2.MovieName}}</option>
+        </select>
+        <select name="actor" id="act"  [(ngModel)]="dname" (change)="filter3(dname)">
+            <option  *ngFor="let item3 of fil1.Directors">{{item3}}</option>
+        </select>
+    </div>    
+</div>
